@@ -3,6 +3,8 @@ import FormInput from "./../../components/form-input/form-input.component";
 import CustomButton from "./../../components/custom-button/custom-button.component";
 import "./sign-in.styles.scss";
 
+import { signInWithGoodle } from "./../../firebase/firebase.utils";
+
 class SignIn extends Component {
   constructor(props) {
     super(props);
@@ -51,6 +53,7 @@ class SignIn extends Component {
             required
           />
           <CustomButton type="submit">Sign In</CustomButton>
+          <CustomButton onClick={signInWithGoodle}>Sign In With Google</CustomButton>
         </form>
       </div>
     );
