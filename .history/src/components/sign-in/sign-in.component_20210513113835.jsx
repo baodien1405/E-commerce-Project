@@ -52,12 +52,10 @@ class SignIn extends Component {
             onChange={this.handChange}
             required
           />
-          <div className="buttons">
-            <CustomButton type="submit">Sign In</CustomButton>
-            <CustomButton onClick={signInWithGoodle} isGoogleSignIn>
-              Sign In With Google
-            </CustomButton>
-          </div>
+          <CustomButton type="submit">Sign In</CustomButton>
+          <CustomButton onClick={signInWithGoodle} isGoogleSignIn>
+            Sign In With Google
+          </CustomButton>
         </form>
       </div>
     );
