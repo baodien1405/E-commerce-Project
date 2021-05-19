@@ -8,7 +8,7 @@ import { auth } from "./../../firebase/firebase.utils";
 import { connect } from "react-redux";
 
 const Header = (props) => {
-  const { currentUser, hidden } = props;
+  const { currentUser } = props;
   return (
     <div className="header">
       <Link className="logo-container" to="/">
@@ -32,7 +32,7 @@ const Header = (props) => {
         )}
         <CartIcon />
       </div>
-      {hidden ? null : <CartDropdown />}
+      <CartDropdown />
     </div>
   );
 };

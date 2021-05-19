@@ -27,6 +27,8 @@ class App extends Component {
             id: snapShot.id,
             ...snapShot.data(),
           });
+
+          console.log(this.state);
         });
       }
       setCurrentUser(userAuth);
@@ -44,25 +46,15 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/shop" component={ShopPage} />
-          <Route
-            exact
-            path="/signin"
-            render={() =>
-              this.props.currentUser ? <Redirect to="/" /> : <SignInAndSignUp />
-            }
-          />
+          <Route path="/signin" component={SignInAndSignUp} />
         </Switch>
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ user }) => ({
-  currentUser: user.currentUser,
-});
-
 const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);
