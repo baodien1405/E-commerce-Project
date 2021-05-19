@@ -14,7 +14,7 @@ class SignIn extends Component {
     };
   }
 
-  handleSubmit = async (e) => {
+  handleSubmit = async e => {
     e.preventDefault();
 
     const { email, password } = this.state;
@@ -25,9 +25,8 @@ class SignIn extends Component {
         email: "",
         password: "",
       });
-    } catch (error) {
-      console.log(error);
     }
+
   };
 
   handChange = (e) => {
@@ -62,11 +61,7 @@ class SignIn extends Component {
           />
           <div className="buttons">
             <CustomButton type="submit">Sign In</CustomButton>
-            <CustomButton
-              type="button"
-              onClick={signInWithGoodle}
-              isGoogleSignIn
-            >
+            <CustomButton onClick={signInWithGoodle} isGoogleSignIn>
               Sign In With Google
             </CustomButton>
           </div>

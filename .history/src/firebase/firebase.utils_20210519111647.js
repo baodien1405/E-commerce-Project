@@ -32,11 +32,9 @@ export const createUserProfileDocument = async (userAuth, additionData) => {
         ...additionData,
       });
     } catch (error) {
-      console.log("error creating user", error.message);
+      console.log(error);
     }
   }
-
-  return userRef;
 };
 
 firebase.initializeApp(config);
