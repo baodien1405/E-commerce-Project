@@ -5,21 +5,17 @@ import { connect } from "react-redux";
 
 import "./cart-dropdown.styles.scss";
 
-const CartDropdown = ({ cartItems }) => {
+const CartDropdown = () => {
   return (
     <div className="cart-dropdown">
-      <div className="cart-items">
-        {cartItems.map((cartItem) => (
-          <CartItem key={cartItem.id} item={cartItem} />
-        ))}
-      </div>
+      <div className="cart-items">{}</div>
       <CustomButton>GO TO CHECKOUT</CustomButton>
     </div>
   );
 };
 
-const mapStateToProps = ({ cart: { cartItems } }) => ({
-  cartItems,
+const mapStateToProps = ({ cartItem: { currentUser } }) => ({
+  currentUser,
 });
 
-export default connect(mapStateToProps, null)(CartDropdown);
+export default connect()(CartDropdown);
