@@ -15,4 +15,4 @@ const storeAndPersistor = {
   persistor,
 };
 
-export default storeAndPersistor;
+export default {};
