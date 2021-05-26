@@ -2,7 +2,7 @@ import React from "react";
 import { ReactComponent as Logo } from "./../../assets/crown.svg";
 import CartIcon from "./../cart-icon/cart-icon.component";
 import CartDropdown from "./../cart-dropdown/cart-dropdown.components";
-
+import "./header.styles.scss";
 import { auth } from "./../../firebase/firebase.utils";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
@@ -13,6 +13,7 @@ import {
   HeaderContainer,
   LogoContainer,
   OptionsContainer,
+  OptionDiv,
   OptionLink,
 } from "./header.styles";
 
@@ -20,16 +21,14 @@ const Header = (props) => {
   const { currentUser, hidden } = props;
   return (
     <HeaderContainer>
-      <LogoContainer to="/">
+      <LogoContainer>
         <Logo className="logo" />
       </LogoContainer>
       <OptionsContainer>
         <OptionLink to="/shop">SHOP</OptionLink>
         <OptionLink to="/shop">CONTACT</OptionLink>
         {currentUser ? (
-          <OptionLink as="div" onClick={() => auth.signOut()}>
-            SIGN OUT
-          </OptionLink>
+          <OptionDiv onClick={() => auth.signOut()}>SIGN OUT</OptionDiv>
         ) : (
           <OptionLink to="/signin">SIGN IN</OptionLink>
         )}
