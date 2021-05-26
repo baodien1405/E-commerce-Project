@@ -24,7 +24,8 @@ class ShopPage extends React.Component {
   }
 
   render() {
-    const { match, isCollectionFetching, isCollectionsLoaded } = this.props;
+    const { match, isCollectionFetching, selectIsCollectionsLoaded } =
+      this.props;
     return (
       <div className="shop-page">
         <Route
@@ -41,7 +42,7 @@ class ShopPage extends React.Component {
           path={`${match.path}/:collectionId`}
           render={(props) => (
             <CollectionPageWithSpinner
-              isLoading={!isCollectionsLoaded}
+              isLoading={selectIsCollectionsLoaded}
               {...props}
             />
           )}
@@ -53,7 +54,7 @@ class ShopPage extends React.Component {
 
 const mapStateToProps = createStructuredSelector({
   isCollectionFetching: selectIsCollectionFetching,
-  isCollectionsLoaded: selectIsCollectionsLoaded,
+  selectIsCollectionsLoaded: selectIsCollectionsLoaded,
 });
 
 const mapDispatchToProps = (dispatch) => ({
