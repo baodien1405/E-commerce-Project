@@ -4,18 +4,17 @@ import { connect } from "react-redux";
 
 import WithSpinner from "./../../components/with-spinner/with-spinner.component";
 
-import {
-  firestore,
-  convertCollectionsSnapshotToMap,
-} from "./../../firebase/firebase.utils";
-
-import { updateCollections } from "../../redux/shop/shop.actions";
-
 import CollectionOverview from "./../../components/collection-overview/collection-overview.component";
 import CollectionPage from "../collection/collection.component";
 
 const CollectionOverviewWithSpinner = WithSpinner(CollectionOverview);
 const CollectionPageWithSpinner = WithSpinner(CollectionPage);
+
+import {
+  firestore,
+  convertCollectionsSnapshotToMap,
+} from "./../../firebase/firebase.utils";
+import { updateCollections } from "../../redux/shop/shop.actions";
 
 class ShopPage extends React.Component {
   state = {
@@ -27,7 +26,7 @@ class ShopPage extends React.Component {
     const { updateCollections } = this.props;
     const collectionRef = firestore.collection("collections");
 
-    collectionRef.get().then((snapshot) => {
+    collectionRef.onSnapshot(async (snapshot) => {
       const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
       updateCollections(collectionsMap);
       this.setState({ loading: false });

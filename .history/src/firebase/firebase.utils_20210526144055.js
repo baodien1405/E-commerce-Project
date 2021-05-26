@@ -62,14 +62,11 @@ export const convertCollectionsSnapshotToMap = (collections) => {
     return {
       routeName: encodeURI(title.toLowerCase()),
       id: doc.id,
-      title,
+      tittle,
       items,
     };
   });
-  return transformedCollection.reduce((accumulator, collection) => {
-    accumulator[collection.title.toLowerCase()] = collection;
-    return accumulator;
-  }, {});
+  console.log(transformedCollection);
 };
 
 firebase.initializeApp(config);
