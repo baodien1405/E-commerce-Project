@@ -77,7 +77,7 @@ firebase.initializeApp(config);
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 export const googleProvider = new firebase.auth.GoogleAuthProvider();
-googleProvider.setCustomParameters({ prompt: "select_account" });
+provider.setCustomParameters({ prompt: "select_account" });
 export const signInWithGoodle = () => auth.signInWithPopup(googleProvider);
 
 export default firebase;
