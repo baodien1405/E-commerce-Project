@@ -10,7 +10,7 @@ import {
 } from "./../../redux/user/user.actions";
 
 const SignIn = ({ emailSignInStart, googleSignInStart }) => {
-  const [userCredentials, setUserCredentials] = useState({
+  const [userCredentials, setCredentials] = useState({
     email: "",
     password: "",
   });
@@ -25,7 +25,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
 
   const handChange = (e) => {
     const { name, value } = e.target;
-    setUserCredentials({ ...userCredentials, [name]: value });
+    setCredentials({ ...userCredentials, [name]: value });
   };
 
   return (

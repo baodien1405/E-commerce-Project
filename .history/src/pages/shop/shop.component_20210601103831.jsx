@@ -7,11 +7,12 @@ import { fetchCollectionsStart } from "./../../redux/shop/shop.actions";
 import CollectionOverviewContainer from "./../../components/collection-overview/collection-overview.container";
 import CollectionPageContainer from "../collection/collection.container";
 
-const ShopPage = ({ fetchCollectionsStart, match }) => {
+const ShopPage = ({ fetchCollectionsStart }) => {
   useEffect(() => {
     fetchCollectionsStart();
-  }, [fetchCollectionsStart]);
+  });
 
+  const { match } = this.props;
   return (
     <div className="shop-page">
       <Route

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Component, useState } from "react";
 import { connect } from "react-redux";
 import FormInput from "./../../components/form-input/form-input.component";
 import CustomButton from "./../../components/custom-button/custom-button.component";
@@ -10,7 +10,7 @@ import {
 } from "./../../redux/user/user.actions";
 
 const SignIn = ({ emailSignInStart, googleSignInStart }) => {
-  const [userCredentials, setUserCredentials] = useState({
+  const [userCredentials, setCredentials] = useState({
     email: "",
     password: "",
   });
@@ -25,7 +25,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
 
   const handChange = (e) => {
     const { name, value } = e.target;
-    setUserCredentials({ ...userCredentials, [name]: value });
+    setCredentials({ ...userCredentials, [name]: value });
   };
 
   return (
