@@ -1,7 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
-const compression = require("compression");
 
 if (process.env.NODE_ENV !== "production") require("dotenv").config();
 
@@ -12,7 +11,6 @@ const port = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(compression());
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "client/build")));
