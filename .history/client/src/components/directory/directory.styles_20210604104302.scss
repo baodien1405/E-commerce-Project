@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
 
-  @media screen and (max-width: 480px) {
-    width: 170%;
+  @media screen and (max-width: 480) {
+    width: 200%;
   }
 }

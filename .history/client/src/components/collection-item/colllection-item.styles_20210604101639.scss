@@ -26,6 +26,10 @@
       opacity: 0.9;
       min-width: unset;
       padding: 0 10px;
+
+      .image {
+        width: 80%;
+      }
     }
   }
 
@@ -52,10 +56,6 @@
         opacity: unset;
       }
     }
-  }
-
-  @media screen and (max-width: 480px) {
-    width: 26vh;
   }
 
   .collection-footer {
