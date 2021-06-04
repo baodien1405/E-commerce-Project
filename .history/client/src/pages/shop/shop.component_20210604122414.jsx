@@ -6,6 +6,9 @@ import { fetchCollectionsStart } from "./../../redux/shop/shop.actions";
 
 import Spinner from "./../../components/spinner/spinner.component";
 
+// import CollectionOverviewContainer from "./../../components/collection-overview/collection-overview.container";
+// import CollectionPageContainer from "../collection/collection.container";
+
 const CollectionOverviewContainer = lazy(() =>
   import("./../../components/collection-overview/collection-overview.container")
 );
